@@ -1,0 +1,29 @@
+.required-star{
+    color: red;
+}
+
+::ng-deep{
+    .input-field{
+        span{
+            .p-inputtext{
+                color: var(--secondary-text);
+                color: rgba(255, 255, 255, 0.872);
+                background: var(--background-color);
+                font-family: 'Open Sans';
+                font-weight: 700;
+                border: 2px solid var(--secondary-text);
+                // min-width: 100%;
+                width: 350px;
+            }
+
+            .p-inputtext:enabled:focus{
+                box-shadow: none;
+                border: 2px solid var(--primary-button);
+            }
+
+            .p-inputtext:enabled:hover {
+                border-color: var(--primary-button);
+            }
+        }
+    }
+}
