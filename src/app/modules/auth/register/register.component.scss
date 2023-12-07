@@ -1,0 +1,41 @@
+.page{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: spac;
+    gap: 10rem;
+    align-items: start;
+    color: var(--white);
+    background: url('../../../../assets/login-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+
+
+
+    .header{
+        font-family: '';
+        font-weight: 700;
+        font-size: 30px;
+        padding: 20px;
+    }
+
+
+    .login{
+        // height: 700px;
+        padding-left: 20px;
+    }
+
+
+    .heading{
+        
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    .body{
+    }
+}
+

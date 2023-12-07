@@ -1,1 +1,47 @@
-<p>register works!</p>
+<div class="page container-fluid">
+    <div class="header">
+        <span>Madhu.todo</span>
+    </div>
+    <div class="main">
+        <div class="login d-flex flex-column justify-content-center align-items-start ">
+            <div class="heading">
+                <span>Create an account!</span>
+            </div>
+            <div class="body d-flex flex-column align-items-center gap-3">
+                <div class="">
+                    <app-input-text
+                        [label] = "'Email'"
+                        [needIcon] = "false"
+                        [iconName] = "'pi pi-user'"
+                        [requiredStar] = "true"
+                        [inputClassName] = "'input-field'"
+                        [placeholder] = "'Enter your email address'"
+                        [formGroup] = "loginForm"
+                        [name] = "'username'"
+                    ></app-input-text>
+                </div>
+                <div class="">
+                    <app-password
+                        [label] = "'Password'"
+                        [requiredStar] = "true"
+                        [toggleMask] = "true"
+                        [feedback] = "false"
+                        [needIcon] = "true"
+                        [iconName] = "'pi pi-user'"
+                        [placeholder] = "'Enter your password'"
+                        [formGroup] = "loginForm"
+                        [name] = "'password'"
+                    ></app-password>
+                </div>
+                <div class="">
+                    <app-button
+                        [label] = "'Register'"
+                        [needIcon] = "false"
+                        [class] = "'login-button'"
+                        (click) = "onLogin()"
+                    ></app-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

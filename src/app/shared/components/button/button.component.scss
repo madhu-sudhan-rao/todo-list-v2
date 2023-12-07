@@ -1,0 +1,51 @@
+::ng-deep{
+    .pi{
+        margin-right: 10px;
+    }
+
+    .p-button {
+        color: #ffffff;
+        background: var(--primary-button);
+        border: 1px solid var(--primary-button);
+        padding: 0.8rem 1.25rem;
+        font-size: 1rem;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 6px;
+
+    }
+
+    .p-button:focus {
+        box-shadow: none;
+    }
+
+    .login-button,.register-button{
+        .p-button{
+            background: var(--primary-button);
+            width: 350px;
+
+        }
+    }
+    
+    .cancel-button{
+        .p-button{
+            background: red;
+            border: 1px solid red;
+            
+            &:hover{
+                background: rgb(239, 63, 63);
+                border: 1px solid rgb(239, 63, 63);
+
+            }
+        }
+
+    }
+
+    .round-button{
+        .p-button{
+            // border-radius: 25px;
+            // height: 40px;
+        }
+    }
+
+    
+}

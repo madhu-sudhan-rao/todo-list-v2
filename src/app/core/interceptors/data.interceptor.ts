@@ -3,16 +3,27 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, every, tap } from 'rxjs';
 
 @Injectable()
 export class DataInterceptor implements HttpInterceptor {
 
+  private response: any;
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    const isLoginOrRegister = request.url.includes('login') || request.url.includes('register');
+    return next.handle(request).pipe(
+      tap((event: HttpEvent<any>) => {
+        console.log(event);
+        if(event instanceof HttpResponse){
+          // this.response = event.body;
+          
+        }
+      })
+    );
   }
 }

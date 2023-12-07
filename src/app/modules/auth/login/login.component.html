@@ -2,19 +2,51 @@
     <div class="header">
         <span>Madhu.todo</span>
     </div>
-    <div class="login">
-        <div class="heading">
-            <span>Welcome!</span>
-        </div>
-        <div class="body">
-            <div class="">
-                <app-input-text
-                    [label] = "'Email'"
-                    [needIcon] = "true"
-                    [iconName] = "'pi pi-user'"
-                    [requiredStar] = "true"
-                    [inputClassName] = "'input-field'"
-                ></app-input-text>
+    <div class="main">
+        <div class="login d-flex flex-column justify-content-center ">
+            <div class="heading">
+                <span>Welcome!</span>
+            </div>
+            <div class="body d-flex flex-column align-items-center gap-3">
+                <div class="">
+                    <app-input-text
+                        [label] = "'Email'"
+                        [needIcon] = "false"
+                        [iconName] = "'pi pi-user'"
+                        [requiredStar] = "true"
+                        [inputClassName] = "'input-field'"
+                        [placeholder] = "'Enter your email address'"
+                        [formGroup] = "loginForm"
+                        [name] = "'username'"
+                    ></app-input-text>
+                </div>
+                <div class="">
+                    <app-password
+                        [label] = "'Password'"
+                        [requiredStar] = "true"
+                        [toggleMask] = "true"
+                        [feedback] = "false"
+                        [needIcon] = "true"
+                        [iconName] = "'pi pi-user'"
+                        [placeholder] = "'Enter your password'"
+                        [formGroup] = "loginForm"
+                        [name] = "'password'"
+                    ></app-password>
+                </div>
+                <div class="">
+                    <app-button
+                        [label] = "'Login'"
+                        [needIcon] = "false"
+                        [class] = "'login-button'"
+                        (click) = "onLogin()"
+                    ></app-button>
+                </div>
+                <div class="">
+                    <app-button
+                        [label] = "'Register'"
+                        (click) = "toRegisterPage()"
+                    ></app-button>
+                </div>
             </div>
         </div>
     </div>
