@@ -1,0 +1,21 @@
+<div class="container search-container">
+    <div class="d-flex gap-3">
+        <div class="">
+            <app-input-text
+                type="text"
+                [formGroup]="todoEntry"
+                [name]="'todo'"
+                [needIcon]="true"
+                [iconName]="'pi pi-chevron-circle-right'"
+                [placeholder]="'Enter a task'"
+            ></app-input-text>
+        </div>
+        <div class="">
+            <app-button
+                [class]="'primary-button'"
+                label="Add"
+                (click)="onAdd()"
+            ></app-button>
+        </div>
+    </div>
+</div>

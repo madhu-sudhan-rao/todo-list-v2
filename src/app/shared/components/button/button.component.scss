@@ -39,6 +39,40 @@
         }
 
     }
+    .logout-button{
+        .p-button{
+            height: 35px;
+            background-color: var(--backgorund-color);
+            border: .1px solid rgb(138, 136, 136);
+            color: rgb(138, 136, 136);
+            transition: all .051s;
+            .p-button-label {
+                font-weight: 400;
+                font-size: 14px;
+            }
+            
+            &:hover{
+                background: rgba(56, 55, 55, 0.579);
+                border: .1px solid rgb(138, 136, 136);
+                color: rgb(192, 190, 190);
+            }
+        }
+    }
+
+    .primary-button{
+        .p-button{
+            height: 40px;
+            background-color: var(--white);
+            border: .1px solid white ;
+            color: black;
+            
+            &:hover{
+                background: rgba(255, 255, 255, 0.890);
+                border: .1px solid rgba(255, 255, 255, 0.890) ;
+                color: black;
+            }
+        }
+    }
 
     .round-button{
         .p-button{

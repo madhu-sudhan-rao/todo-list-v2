@@ -5,7 +5,7 @@ import { PrimeUiModule } from '../prime-ui/prime-ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordComponent } from './inputs/password/password.component';
 import { ButtonComponent } from './button/button.component';
-import { HeaderComponent } from './header/header.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 
 
@@ -14,7 +14,7 @@ import { HeaderComponent } from './header/header.component';
     InputTextComponent,
     PasswordComponent,
     ButtonComponent,
-    HeaderComponent
+    AvatarComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
   exports: [
     InputTextComponent,
     PasswordComponent,
-    ButtonComponent
+    ButtonComponent,
+    AvatarComponent
   ]
 })
 export class ComponentsModule { }

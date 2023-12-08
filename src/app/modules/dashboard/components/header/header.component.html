@@ -1,0 +1,22 @@
+<div class="header">
+   <div class="profile p-3 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3" >
+            <div>
+                <app-avatar
+                    [label]="getFirstLetter(username)"
+                    image="../../../../assets/m-logo.jpeg"
+                    size="large"
+                ></app-avatar>
+            </div>
+            <div class="username">
+                {{username}}
+            </div>
+        </div>
+        <div class="">
+            <app-button
+                [class]="'logout-button'"
+                label="Logout"
+            ></app-button>
+        </div>
+   </div>
+</div>

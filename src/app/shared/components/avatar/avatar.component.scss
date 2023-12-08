@@ -1,0 +1,13 @@
+.no-image{
+    color: #fff;
+}
+
+::ng-deep {
+
+    .no-image{   
+        .p-avatar {
+            background-color: #c01e35;
+            border-radius: 6px;
+        }
+    }
+}

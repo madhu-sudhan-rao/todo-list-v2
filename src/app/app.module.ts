@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DataInterceptor } from './core/interceptors/data.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { userDetails } from './shared/store/user/user.reducer';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { DataInterceptor } from './core/interceptors/data.interceptor';
     HttpClientModule,
     SharedModule,
     AuthModule,
-    DashboardModule
+    DashboardModule,
+    StoreModule.forRoot({
+      user: userDetails
+    }, {})
 
 
   ],
