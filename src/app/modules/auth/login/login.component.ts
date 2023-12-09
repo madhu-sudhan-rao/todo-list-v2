@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
 
   
   ngOnInit(): void {
+    if(this.auth.isLoggedIn()){
+      this.router.navigate(['/dashboard'])
+    }
     this.loginForm = this.fb.group({
       username : [null, Validators.required],
       password : [null, Validators.required],
@@ -27,7 +30,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(){
-    console.log(this.loginForm);
     this.auth.login(this.loginForm.value);
     // this.auth.login(this.loginForm.value).subscribe(
     //   (data)=>{

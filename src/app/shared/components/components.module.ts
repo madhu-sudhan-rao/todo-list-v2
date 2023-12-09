@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordComponent } from './inputs/password/password.component';
 import { ButtonComponent } from './button/button.component';
 import { AvatarComponent } from './avatar/avatar.component';
+import { PageNotFoundComponent } from './wildcard-components/page-not-found/page-not-found.component';
 
 
 
@@ -14,7 +15,8 @@ import { AvatarComponent } from './avatar/avatar.component';
     InputTextComponent,
     PasswordComponent,
     ButtonComponent,
-    AvatarComponent
+    AvatarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { AvatarComponent } from './avatar/avatar.component';
     InputTextComponent,
     PasswordComponent,
     ButtonComponent,
-    AvatarComponent
+    AvatarComponent,
+    PageNotFoundComponent
   ]
 })
 export class ComponentsModule { }

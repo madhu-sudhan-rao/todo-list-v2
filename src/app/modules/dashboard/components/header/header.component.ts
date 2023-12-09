@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, first } from 'rxjs';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent {
   username!: string;
 
   constructor(
-    private store: Store<{user: string}>
+    private store: Store<{user: string}>,
+    private auth: AuthService
   ){
     this.userName$ = store.select('user')
     this.userName$.subscribe((data)=>{
@@ -27,6 +29,10 @@ export class HeaderComponent {
   getFirstLetter(username: string){
     let firstLetter = this.username.charAt(0);
     return firstLetter;
+  }
+
+  logout(){
+    this.auth.logout()
   }
 
 

@@ -5,6 +5,7 @@ import {AngularFireAuth} from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { updateUserName } from 'src/app/shared/store/user/user.actions';
+import { UserDataService } from 'src/app/shared/services/user-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,13 @@ export class AuthService {
 
   // private baseUrl: string = 'https://todo-list-dfabf-default-rtdb.firebaseio.com/';
   private baseUrl: string = firebaseConfig.databaseURL;
-  isLoggedIn: boolean = false;
+  // isLoggedIn: boolean = false;
   constructor(
     private http: HttpClient,
     private fireAuth: AngularFireAuth,
     private router: Router,
-    private store: Store
+    private store: Store,
+    private userDataService: UserDataService
   ) { }
 
   login(loginData: {username: string, password: string}){
@@ -37,6 +39,9 @@ export class AuthService {
         // data.user?.displayName = "Madhu"
         localStorage.setItem('username', username)
         this.store.dispatch(updateUserName(username))
+        const user = data.user._delegate
+        this.userDataService.setUserData(user);
+        this.storeToken(user.stsTokenManager);
         
       }
     )
@@ -58,5 +63,21 @@ export class AuthService {
   }
 
   getUsers(){
+  }
+
+  storeToken(tokenObject:{}){
+    const token = JSON.stringify(tokenObject);
+    localStorage.setItem('token', token)
+  }
+
+  isLoggedIn(){
+    console.log("login checking");
+    
+    return !!localStorage.getItem('token')
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/auth/login'])
   }
 }

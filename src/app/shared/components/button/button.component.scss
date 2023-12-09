@@ -39,13 +39,14 @@
         }
 
     }
-    .logout-button{
+    .secondary-button{
         .p-button{
             height: 35px;
             background-color: var(--backgorund-color);
-            border: .1px solid rgb(138, 136, 136);
+            border: .1px solid rgba(138, 136, 136, 0.496);
             color: rgb(138, 136, 136);
             transition: all .051s;
+            border-radius: 3px;
             .p-button-label {
                 font-weight: 400;
                 font-size: 14px;
@@ -53,7 +54,7 @@
             
             &:hover{
                 background: rgba(56, 55, 55, 0.579);
-                border: .1px solid rgb(138, 136, 136);
+                border: .1px solid rgba(56, 55, 55, 0.92);
                 color: rgb(192, 190, 190);
             }
         }
@@ -65,6 +66,7 @@
             background-color: var(--white);
             border: .1px solid white ;
             color: black;
+            border-radius: 3px;
             
             &:hover{
                 background: rgba(255, 255, 255, 0.890);

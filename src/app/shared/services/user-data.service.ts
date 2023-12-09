@@ -14,7 +14,13 @@ export class UserDataService {
 
   ) { }
 
-  
+  setUserData(userData: any): void{
+    this.user = userData;
+    console.log("User data assigned");
+    console.log(this.user);
+    
+    
+  }
 
 
 }

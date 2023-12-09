@@ -10,7 +10,15 @@
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
+$borderRadius: 3px;
+
 
 // font-family: 'Inter', sans-serif;
 // font-family: 'Open Sans', sans-serif;
 // font-family: 'Poppins', sans-serif;
+:root{
+    // BUTTON STYLES
+    $borderRadius: 3px;
+    --borderRadius : var(--bor)
+
+}
