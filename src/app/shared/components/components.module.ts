@@ -7,6 +7,7 @@ import { PasswordComponent } from './inputs/password/password.component';
 import { ButtonComponent } from './button/button.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { PageNotFoundComponent } from './wildcard-components/page-not-found/page-not-found.component';
+import { IconComponent } from './icon/icon.component';
 
 
 
@@ -16,7 +17,8 @@ import { PageNotFoundComponent } from './wildcard-components/page-not-found/page
     PasswordComponent,
     ButtonComponent,
     AvatarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    IconComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { PageNotFoundComponent } from './wildcard-components/page-not-found/page
     PasswordComponent,
     ButtonComponent,
     AvatarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    IconComponent
   ]
 })
 export class ComponentsModule { }

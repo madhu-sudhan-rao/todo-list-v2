@@ -2,11 +2,37 @@
     <div class="task col-12 col-md-5  "
         *ngFor="let task of loadedTasks"
     >
-        <div class="">
-            {{task.title}}
+        <div>
+            <div class="title">
+                {{task.title}}
+            </div>
+            <div class="">
+                {{task.description}}
+            </div>
+            <div class="date">
+                {{task.createdAt | date : "MM/dd/yy" }}
+            </div>
         </div>
-        <div class="">
-            {{task.id}}
+        <div class="buttons">
+            <div class="">
+                <app-icon
+                    iconName="pi pi-check"
+                    [class]="'icon-button'"
+                ></app-icon>
+            </div>
+            <div class="">
+                <app-icon
+                    iconName="pi pi-pencil"
+                    [class]="'icon-button'"
+                ></app-icon>
+            </div>
+            <div class="">
+                <app-icon
+                    iconName="pi pi-trash"
+                    [class]="'icon-button rounded-button'"
+                ></app-icon>
+            </div>
         </div>
+
     </div>
 </div>

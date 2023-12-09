@@ -1,0 +1,13 @@
+.icon-button{
+    i{
+        padding: 8px;
+        border-radius: 50%;
+        font-size: 15px;
+        
+        &:hover{
+            background: rgba(48, 48, 48, 0.341);
+            cursor: pointer;
+            box-shadow: 0 0 10px 2px rgba(150, 149, 149, 0.7);;
+        }
+    }
+}
