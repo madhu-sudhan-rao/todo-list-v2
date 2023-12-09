@@ -1,1 +1,12 @@
-<p>tasks works!</p>
+<div class="container tasks-container" >
+    <div class="task col-12 col-md-5  "
+        *ngFor="let task of loadedTasks"
+    >
+        <div class="">
+            {{task.title}}
+        </div>
+        <div class="">
+            {{task.id}}
+        </div>
+    </div>
+</div>

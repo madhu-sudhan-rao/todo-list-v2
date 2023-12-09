@@ -41,7 +41,6 @@ export class AddTodoComponent implements OnInit {
       this.task.title = this.todoEntry.value.todo;
       this.task.createdAt = new Date();
       this.task.completed = false
-      alert(this.todoEntry.value.todo)
       this.taskService.addTask(this.task)
     }
   }

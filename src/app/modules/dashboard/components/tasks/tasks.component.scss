@@ -1,0 +1,17 @@
+.tasks-container{
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    
+    .task{
+        background: rgb(16, 16, 16);
+        padding: 20px 30px;
+        border-radius: 5px;
+        
+        &:hover{
+            outline: 0.1px solid rgb(90, 88, 88);
+        }
+    }
+}
