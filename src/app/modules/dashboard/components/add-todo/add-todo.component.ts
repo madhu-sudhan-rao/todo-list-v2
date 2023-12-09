@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TasksCrudService } from '../../services/tasks-crud.service';
+import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-add-todo',
@@ -9,10 +11,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddTodoComponent implements OnInit {
 
   todoEntry!: FormGroup;
+  // task!: Task = {
+  //   title: '',
+  //   description: '',
+  //   createdAt: new Date(),
+  //   completed: false,
+  //   completedAt: new Date(),
+  //   dueDate: new Date()
+  // };
+
+  task: Task
+
 
   constructor(
-    private  fb: FormBuilder
-  ){}
+    private  fb: FormBuilder,
+    private taskService: TasksCrudService
+  ){
+    this.task = {} as Task
+  }
 
   ngOnInit(): void {
       this.todoEntry = this.fb.group({
@@ -21,9 +37,12 @@ export class AddTodoComponent implements OnInit {
   }
 
   onAdd(){
-    if(this.todoEntry.valid){
-      console.log(this.todoEntry.value.todo)
+    if(this.todoEntry.valid){      
+      this.task.title = this.todoEntry.value.todo;
+      this.task.createdAt = new Date();
+      this.task.completed = false
       alert(this.todoEntry.value.todo)
+      this.taskService.addTask(this.task)
     }
   }
 

@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 
 
@@ -12,7 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
   declarations: [
     DashboardComponent,
     AddTodoComponent,
-    HeaderComponent
+    HeaderComponent,
+    TasksComponent
   ],
   imports: [
     CommonModule,
