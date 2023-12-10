@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularFireModule } from '@angular/fire/compat' ;
+import { AngularFireModule } from  '@angular/fire/compat';
 import { firebaseConfig } from 'src/firebase-config/firebase-config';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DataInterceptor } from './core/interceptors/data.interceptor';
 import { StoreModule } from '@ngrx/store';
 import { userDetails } from './shared/store/user/user.reducer';
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; // Import AngularFirestoreModule
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import { userDetails } from './shared/store/user/user.reducer';
     DashboardModule,
     StoreModule.forRoot({
       user: userDetails
-    }, {})
-
+    }, {}),
+    // AngularFirestoreModule
 
   ],
   providers: [

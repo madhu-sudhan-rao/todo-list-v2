@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { updateUserName } from 'src/app/shared/store/user/user.actions';
 import { UserDataService } from 'src/app/shared/services/user-data.service';
+import { FirebaseApp } from '@angular/fire/compat';
+// import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +23,9 @@ export class AuthService {
     private fireAuth: AngularFireAuth,
     private router: Router,
     private store: Store,
-    private userDataService: UserDataService
+    private userDataService: UserDataService,
+    // private fireStore: Firestore,
+    // private afs: AngularFirestore
   ) { }
 
   login(loginData: {username: string, password: string}){
@@ -42,9 +47,21 @@ export class AuthService {
         const user = data.user._delegate
         this.userDataService.setUserData(user);
         this.storeToken(user.stsTokenManager);
+        console.log(user);
+        // this.fireStore
+        // this.afs.collection('users').snapshotChanges().pipe(
+        //   map(actions => {
+        //     return actions.map(a => {
+        //       console.log(a);
+        //       // Handle the document changes here
+        //     })
+        //   })
+        // )
+        
         
       }
     )
+    
   }
 
   register(registerData: {username: string, password: string}){

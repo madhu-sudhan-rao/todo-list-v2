@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
 })
 export class UserDataService {
 
-  private user: any
+  user!: {}
   constructor(
     private router: Router,
     // private fireAuth: AngularFireAuth,
+    // private afs: A
 
   ) { }
 

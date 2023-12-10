@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   }
 
   toRegisterPage(){
-    this.router.navigate(['register'])
+    this.router.navigate(['/auth/register'])
 
   }
 
