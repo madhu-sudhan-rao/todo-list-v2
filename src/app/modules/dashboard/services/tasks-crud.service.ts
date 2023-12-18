@@ -36,11 +36,20 @@ export class TasksCrudService {
             tasksArray.push({...responseData[key], id:key})
           }
         }
+        console.log(tasksArray);
+        
         return tasksArray
       }),
       catchError(errorResponse => {
         return throwError(errorResponse);
       })
+      )
+  }
+
+  deleteTasks(id: string){
+    return this.http
+      .delete(
+        `${this.url}tasks/${id}`
       )
   }
 }

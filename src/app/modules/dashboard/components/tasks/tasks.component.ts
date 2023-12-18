@@ -32,4 +32,13 @@ export class TasksComponent implements OnInit {
       }
     )
   }
+
+  onDelete(task: any){
+    this.taskService.deleteTasks(task.id).subscribe(
+      (res: any)=>{
+        console.log(res);
+        
+      }
+    )
+  }
 }
