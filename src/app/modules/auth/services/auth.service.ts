@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firebaseConfig } from 'src/firebase-config/firebase-config';
 import {AngularFireAuth} from '@angular/fire/compat/auth'
@@ -16,7 +16,8 @@ import { map } from 'rxjs';
 export class AuthService {
 
   // private baseUrl: string = 'https://todo-list-dfabf-default-rtdb.firebaseio.com/';
-  private baseUrl: string = firebaseConfig.databaseURL;
+  // private baseUrl: string = firebaseConfig.databaseURL;
+  private baseUrl: string = "http://localhost:9999/";
   // isLoggedIn: boolean = false;
   constructor(
     private http: HttpClient,
@@ -27,6 +28,8 @@ export class AuthService {
     // private fireStore: Firestore,
     // private afs: AngularFirestore
   ) { }
+
+  
 
   login(loginData: {username: string, password: string}){
     // return this.http.post(`${this.baseUrl}/login.json`, loginData)
@@ -65,18 +68,17 @@ export class AuthService {
   }
 
   register(registerData: {username: string, password: string}){
-    this.fireAuth.createUserWithEmailAndPassword(registerData.username, registerData.password).then(
-      (data)=>{
-        console.log(data);
-        
-      }
-    )
+    const body = {email: registerData.username, password: registerData.password};
+    console.log('body: ', body);
+    
+    let params = new HttpParams()
+    .set('email', body.email)
+    .set('password', body.password);
+    console.log('params: ', params);
+    
 
-  }
-
-  addUser(registerData: any){
-    // registerData.id = this.afs.createId()
-    // return this.afs.collection('/users').add(registerData)
+    return this.http.post(`${this.baseUrl}users/create`, body);
+    
   }
 
   getUsers(){

@@ -23,13 +23,13 @@ export class RegisterComponent {
       
   }
 
-  onLogin(){
-    console.log(this.loginForm);
-    this.auth.register(this.loginForm.value);
-    // this.auth.login(this.loginForm.value).subscribe(
-    //   (data)=>{
-    //     console.log(data)
-    //   }
-    // )
+  onRegister(){
+    this.auth.register(this.loginForm.value).subscribe(
+      (response: any)=>{
+        console.log(response);
+        
+      }
+    );
+
   }
 }
